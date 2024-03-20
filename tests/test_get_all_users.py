@@ -17,8 +17,6 @@ async def test_get_all_users(async_client):
 
 @pytest.mark.asyncio
 async def test_get_user_by_id(async_client):
-    r = await async_client.get(f'{BASE_URL}users/{random.randint(1, 2)}')
+    r = await async_client.get(f'{BASE_URL}users/{random.randint(1, 12)}')
     response = Response(r)
     response.assert_status_code(200).validate(TypicalUser)
-
-

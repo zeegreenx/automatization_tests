@@ -16,6 +16,10 @@ class UpdateUser(BaseModel):
     updatedAt: datetime
 
 
+class UpdField(BaseModel):
+    name: str = 'test-case'
+
+
 class TypicalUser(BaseModel):
     id: int
     email: str
