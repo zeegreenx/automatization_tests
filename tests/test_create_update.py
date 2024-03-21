@@ -28,3 +28,6 @@ async def test_update_users_with_patch(async_client):
     r = await async_client.patch(f'{BASE_URL}users/{randint(1, 12)}', data=upd_field)
     response = Response(r)
     response.assert_status_code(200).validate(UpdField)
+
+
+

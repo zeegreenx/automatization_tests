@@ -29,8 +29,8 @@ class TypicalUser(BaseModel):
 
 
 class Support(BaseModel):
-    url: str
-    text: str
+    url: str = "https://reqres.in/#support-heading"
+    text: str = "To keep ReqRes free, contributions towards server costs are appreciated!"
 
 
 class ListUsers(BaseModel):
