@@ -38,8 +38,9 @@ async def test_get_delayed_users():
         start_time = get_event_loop().time()
         r = await client.get(f'{BASE_URL}users', params=[('page', f'{randint(1, 2)}'), ('delay', f'{delay_time}')])
         end_time = get_event_loop().time()
-        elapsed_time = end_time - 100
+        elapsed_time = end_time - start_time
         response = DelayedResponse(r, received_delay=elapsed_time, expected_delay= delay_time)
 
         response.assert_status_code(200).assert_compare_delay()
 
+# TODO Негативные тесты + Более понятное логрование и дебагинг
