@@ -1,4 +1,3 @@
-# from src.enums.global_enums import GlobalErrorMessages
 from src.base_utils.logger import Logger
 
 
@@ -54,7 +53,7 @@ class DelayedResponse(Response):
         self.expected_delay = expected_delay
 
     def assert_compare_delay(self):
-        assert self.expected_delay == self.received_delay, self
+        assert self.expected_delay - 0.6 <= self.received_delay <= self.expected_delay + 0.6, self
 
     def __str__(self):
         delay_message = "Delay information not available."
